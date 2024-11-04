@@ -1,150 +1,35 @@
-\documentclass[a4paper, 14pt]{extarticle}
-
-% Шрифты, кодировки, символьные таблицы, переносы
-\usepackage{cmap}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8x]{inputenc}
-\usepackage[english, russian]{babel}
-
-% Пакеты американского математического сообщества
-\usepackage{amssymb, amsfonts, amsmath, amsthm}  
-
-%Библиография
-\usepackage[style=authoryear-icomp,sorting=anyt]{biblatex}
-
-% Сокращения
-\usepackage{cancel}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Определение}
-
-% Красная строка
-\usepackage{indentfirst}
-
-% Ссылки в pdf
-\usepackage[unicode, colorlinks, urlcolor=magenta, linkcolor=black]{hyperref}
-
-% Таблицы
-\usepackage{makecell,multirow} 
-
-% Графика
-\usepackage{graphicx}
-\usepackage[usenames, dvipsnames]{color} 
-\usepackage{float}
-% \usepackage{subcaption}
-
-% Геометрия страницы
-\usepackage{geometry}
-\geometry{left=2cm, right=2cm, top=2.5cm, bottom=2.5cm, bindingoffset=0cm, headheight=18pt}
-
-% Колонтитулы
-\usepackage{fancyhdr} 
-% применим колонтитул к стилю страницы
-\pagestyle{fancy} 
-%очистим "шапку" страницы
-\fancyhead{} 
-%слева сверху на четных и справа на нечетных
-\fancyhead[R]{Смирнов Д.А.} 
-%справа сверху на четных и слева на нечетных
-\fancyhead[L]{Интенсив на СРГ} 
-%очистим "подвал" страницы
-\fancyfoot{} 
-% номер страницы в нижнем колинтуле в центре
-\fancyfoot[C]{\thepage} 
-
-% Межстрочный отступ
-\usepackage{setspace}
-\linespread{1.15} % капельку увеличенный
-\frenchspacing % <<французские>> пробелы
-
-% Нумерация
-\renewcommand{\labelenumii}{\theenumii)}
-% В заголовках появляется точка, но при ссылке на них ее нет
-\usepackage{misccorr}
-
-% Содержание
-\usepackage{tocloft}
-\usepackage{secdot}
-\sectiondot{subsection}
-
-% Физика
-\usepackage{physics}
-
-% Новые команды
-\newcommand{\Mean}[1]{\langle#1\rangle}
-\newcommand{\Defi}{\underset{def}{=}}
-\newcommand{\Inte}{\int\limits_{-\infty}^{\infty}} 
-
-\addto\captionsrussian{%
-	\renewcommand{\contentsname}{Оглавление}
-	\renewcommand{\partname}{Часть}%
-}
-\def\thepart{\Roman{part}}
-\usepackage{tocloft}
-\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
-\renewcommand{\cftpartpresnum}{\Roman{part}~} % Префикс для номеров частей
-% \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for chapters
-% \newlength\mylen
-\renewcommand\thepart{\Roman{part}.}
-% \renewcommand\cftpartpresnum{Лекция~}
-% \renewcommand\cftsecpresnum{Лекция~}
-% \setlength{\cftsecnumwidth}{6em}
-% \renewcommand{\cftsecpresnum}{Лекция\ }
-% \renewcommand{\cftsecaftersnum}{.}
-% \renewcommand{\cftsecaftersnumb}{\newline}
-\renewcommand{\cftsecdotsep}{\cftdotsep}
-\renewcommand{\kappa}{\varkappa}
-\renewcommand{\phi}{\varphi}
-\renewcommand{\epsilon}{\varepsilon}
-
-% #1: math symbol
-% #2: legend
-\def\alegend#1#2{\overset{\underset{\scriptstyle\downarrow}{\scriptstyle\text{#2}}}{#1}}
-\def\blegend#1#2{\underset{\underset{\scriptstyle\text{#2}}{\scriptstyle\uparrow}}{#1}}
-\def\hp{\hat{p}}
-\def\hx{\hat{x}}
-\def\hH{\hat{H}}
-
-% \usepackage[explicit]{titlesec}
-% \titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{Лекция\ \thesection.\ #1}
-\usepackage{epigraph}
-\usepackage{mathtools}
-\mathtoolsset{showonlyrefs=true}
-
-% https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
-
-\usepackage{xparse}% http://ctan.org/pkg/xparse
-
-% Настройка формата ссылок на рисунки
-\usepackage{cleveref}
-\crefname{figure}{рис.}{рис.}
-
-\newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}}
-% Нормальный вектор для штрихов
-
-\newcommand\undernote[2]{
-	%
-	\underarrow[
-	#1
-	][\uparrow]{\substack{#2}}
-	%
-}
-\DeclareMathOperator{\Div}{div}
-\DeclareMathOperator{\Rot}{rot}
-\DeclareMathOperator{\Grad}{grad}
-
-\usepackage{listings}
-
-% Default fixed font does not support bold face
-\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
-\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+%\documentclass{article}
+%
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+%\usepackage[english,russian]{babel}
+%\usepackage{biblatex}
+%\usepackage{graphicx} % Required for inserting images
+%\usepackage{amsmath}
+%\usepackage[unicode, pdftex]{hyperref}
+%\usepackage[section]{placeins}
+%
+%% Настройка формата ссылок на рисунки
+%\usepackage{cleveref}
+%\crefname{figure}{рис.}{рис.}
+%
+%\usepackage{listings}
+%\usepackage{caption}
+%\usepackage{wrapfig}
+%
+%\addbibresource{biblio.bib}
+%
+%% Default fixed font does not support bold face
+%\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+%\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
 
 % Custom colors
 \usepackage{color}
 \definecolor{deepblue}{rgb}{0,0,0.5}
 \definecolor{deepred}{rgb}{0.6,0,0}
 \definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+\usepackage{amsmath}
 
 % Python style for highlighting
 \newcommand\pythonstyle{\lstset{

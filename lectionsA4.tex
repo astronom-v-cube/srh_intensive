@@ -1,0 +1,204 @@
+\documentclass[a4paper,14pt]{extarticle}
+
+\include{def}
+
+% Шрифты, кодировки, символьные таблицы, переносы
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{lastpage}
+% Пакеты американского математического сообщества
+\usepackage{amssymb,amsfonts,amsmath,amsthm}
+% Сокращения
+\usepackage{cancel}
+% \usepackage{pscyr}
+\usepackage[numbers, sort&compress]{natbib}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+
+% Красная строка
+\usepackage{indentfirst}
+
+% Таблицы
+\usepackage{makecell,multirow}
+
+% Графика
+\usepackage{graphicx}
+%\usepackage[usenames,dvipsnames]{color} почему то не робит
+\usepackage{float}
+% \usepackage{subcaption}
+\usepackage{wrapfig}
+% Геометрия страницы
+\usepackage{geometry,tikz}
+\usetikzlibrary{calc}
+\geometry{left=20mm,right=20mm,top=34mm,bottom=31mm,bindingoffset=0cm,headheight=18pt}
+
+% Колонтитулы
+\usepackage{fancyhdr}
+
+% применим колонтитул к стилю страницы
+%очистим <<шапку>> страницы
+\fancyhead{}
+%слева сверху на четных и справа на нечетных
+\fancyhead[R]{\fontsize{12}{12} \selectfont автор}
+% \fancyhead[R]{Сарафанов Ф.Г., Понур К.А. и др.}
+%справа сверху на четных и слева на нечетных
+\fancyhead[L]{\fontsize{12}{12} \selectfont предмет}
+%очистим <<подвал>> страницы
+\fancyfoot{}
+% номер страницы в нижнем колонтитуле в центре
+\fancyfoot[C]{\thepage}
+
+% Межстрочный отступ
+\usepackage{setspace}
+\linespread{0.99} % капельку увеличенный
+\frenchspacing % <<французские>> пробелы
+
+% Нумерация
+\renewcommand{\labelenumii}{\theenumii)}
+% В заголовках появляется точка, но при ссылке на них ее нет
+\usepackage{misccorr}
+
+% Содержание
+% \usepackage{tocloft}
+
+% Физика
+\usepackage{physics}
+
+\newcommand{\todo}[1]{\textbf{TO DO:} #1}
+
+\addto\captionsrussian{%
+	\renewcommand{\contentsname}{Содержание}
+	\renewcommand{\partname}{Раздел}%
+}
+
+\usepackage{tocloft}
+
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{.25ex}
+
+\usepackage{secdot}
+\sectiondot{subsubsection}
+\sectiondot{subsection}
+\sectiondot{section}
+
+\renewcommand{\kappa}{\varkappa}
+\renewcommand{\phi}{\varphi}
+%\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\hat}{\widehat}
+\newcommand{\const}{\mathrm{const}\,}
+\newcommand{\frc}[2]{\raisebox{2pt}{$#1$}\big/\raisebox{-3pt}{$#2$}}
+
+% #1: math symbol
+% #2: legend
+\def\alegend#1#2{\overset{\underset{\scriptstyle\downarrow}{\scriptstyle\text{#2}}}{#1}}
+\def\blegend#1#2{\underset{\underset{\scriptstyle\text{#2}}{\scriptstyle\uparrow}}{#1}}
+\def\hp{\hat{p}}
+\def\hx{\hat{x}}
+\def\hH{\hat{H}}
+
+% \usepackage[explicit]{titlesec}
+
+% \titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{Лекция\ \thesection.\ #1}
+% \titlelabel{\thetitle.\quad}
+\usepackage{epigraph}
+% \usepackage{titletoc}
+% \usepackage{titlesec}
+% \titlelabel{\thetitle.\quad}
+% \makeatletter
+% \renewcommand*{\@seccntformat}[1]{%
+%   \csname the#1\endcsname.\quad
+% }
+% \makeatother
+% \usepackage{secdot}
+% \sectiondot{subsection}
+
+% \usepackage{mathtools}
+% \mathtoolsset{showonlyrefs=true}
+\numberwithin{equation}{section}
+
+% https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
+
+\usepackage{xparse}% http://ctan.org/pkg/xparse
+
+\usepackage[font=small]{caption}
+
+\usepackage{kbordermatrix}%
+
+
+\usepackage[inline]{enumitem}
+\usepackage{pifont}
+\usepackage{float}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Rot}{rot}
+\DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Sh}{Sh}
+\usepackage{comment}
+\usepackage{booktabs}
+% \makeindex
+% \usepackage{makeidx}
+\usepackage[xindy,noautomatic]{imakeidx}
+
+% Ссылки в pdf
+\usepackage[unicode,
+	colorlinks,
+	urlcolor=black,
+	linkcolor=black,
+	citecolor=black
+]{hyperref}
+
+\makeindex %[program=texindy, options = -C utf8 -M latin-alph.xdy -L  -L russian]
+\usepackage{changepage}
+
+\newcommand{\currentyear}{2024}
+\begin{document}
+
+\newgeometry{top=20mm, bottom=20mm, left=20mm, right=20mm}     % use whatever margins you want for left, right, top
+\input{titlepage}
+\restoregeometry
+\newgeometry{top=20mm, bottom=31mm, left=20mm, right=20mm}
+
+\setcounter{page}{3}
+\tableofcontents
+\restoregeometry
+
+\newpage
+\sloppy
+\pagestyle{fancy}
+
+%\input{lections/grechnev}
+\input{lections/globa}
+%\input{lections/raw_lections (Копия)}
+% \newpage
+\addcontentsline{toc}{section}{Предметный указатель}
+\printindex
+% texindy -v -C utf8 -L russian -M latin-alph.xdy lectionsA4.idx
+
+% \section*{Список литературы}
+\newpage
+\addcontentsline{toc}{section}{Список литературы}
+\begin{thebibliography}{99}
+
+\bibitem{Wieringa} Wieringa M.H. An investigation of the telescope based on calibration methods "redundancy" and "self-cal". Experimental Astronomy. 1992. Vol. 2, P. 203–225. DOI: 10.1007/BF 00420576.
+
+\bibitem{Liu} Liu A., Tegmark M., Morrison S., Lutomirski A., Zaldarriaga M. Precision Calibration of Radio Interferometers Using Redundant Baselines. 2010. arXiv:1001.5268. DOI: 10.1111/j. 1365-2966.2010.17174.x.
+
+\bibitem{trees} Федотова А.Ю., Алтынцев А.Т., Кочанов А.А., Лесовой С.В., Мешалкина Н.С. О калибровке изображений Сибирского радиогелиографа. Солнечно-земная физика. 2019. Т. 5, № 4. С. 34–41. DOI: 10.12737/szf-54201904.
+\newline{\footnotesize \color{black!20!white} \url{https://naukaru.ru/en/nauka/article/28613/view}}
+
+\bibitem{Zirin} Zirin H., Baumert B.M., Hurford G.J. The microwave brightness temperature spectrum of the quiet Sun. Astrophys. J. 1991, vol. 370, pp. 779–783. DOI: 10.1086/169861.
+
+
+
+\bibitem{priest} Э.Р. Прист. Солнечная магнитогидродинамика. Пер. с англ. --- М:  Мир, 1985. --- 592~с.
+\newline{\footnotesize \color{black!20!white} \url{https://libcats.org/book/729536}}
+
+\end{thebibliography}
+\newgeometry{top=20mm, bottom=20mm, left=20mm, right=20mm}
+\input{foot}
+
+\end{document}
